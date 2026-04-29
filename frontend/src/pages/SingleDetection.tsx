@@ -5,7 +5,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/src/components/ui/Button';
 import { Input, Select } from '@/src/components/ui/Input';
-import { predictSingle, saveInteraction, apiErrorMessage } from '@/src/services/api';
+import { predictSingle, recommendPesticide, saveHistory, apiErrorMessage } from '@/src/services/api';
 import { authStore } from '@/src/store/auth';
 import { cn } from '@/src/utils/helpers';
 
@@ -25,6 +25,7 @@ export default function SingleDetection() {
   const [cropStage, setCropStage] = React.useState('');
   const [isAnalyzing, setIsAnalyzing] = React.useState(false);
   const [result, setResult] = React.useState<any | null>(null);
+  const [pesticideRecommendation, setPesticideRecommendation] = React.useState<string | null>(null);
   const [error, setError] = React.useState<string | null>(null);
 
   const handleFile = (file: File | undefined) => {
@@ -70,24 +71,30 @@ export default function SingleDetection() {
       fd.append('crop_name', cropName.trim());
       fd.append('crop_stage', cropStage);
 
-      const data = await predictSingle(fd);
+        const data = await predictSingle(fd);
 
       setResult(data);
+      setPesticideRecommendation(null);
+
+      const detectedDisease = data.disease || data.dominant_disease || '';
+      if (detectedDisease) {
+        const rec = await recommendPesticide({
+          disease: detectedDisease,
+          crop: cropName.trim(),
+          soil: 'normal',
+          land_area: 1,
+          stage: cropStage,
+        });
+        setPesticideRecommendation(rec.pesticide);
+      }
 
       const user = authStore.getUser();
 
       if (user) {
-        await fetch(`${import.meta.env.VITE_API_URL}/history/save`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${user.token}`,
-          },
-          body: JSON.stringify({
-            case_type: "single_detection",
-            title: data.disease,
-            payload_json: data,
-          }),
+        await saveHistory({
+          case_type: 'single_detection',
+          title: `${cropName}: ${detectedDisease}`,
+          payload_json: data,
         });
       }
     } catch (err) {
@@ -101,6 +108,7 @@ export default function SingleDetection() {
     setImage(null);
     setImageFile(null);
     setResult(null);
+    setPesticideRecommendation(null);
     setError(null);
     setCropName('');
     setCropStage('');
@@ -228,6 +236,17 @@ export default function SingleDetection() {
                 <p className="text-xs text-slate-400 leading-relaxed px-1">
                   ⚠️ {result.consult_expert_disclaimer}
                 </p>
+              )}
+
+              {pesticideRecommendation && (
+                <div className="bg-emerald-50 border border-emerald-100 rounded-3xl p-5">
+                  <p className="text-xs font-black uppercase tracking-[0.25em] text-emerald-600 mb-2">
+                    Recommended Pesticide
+                  </p>
+                  <p className="text-xl font-bold text-emerald-900">
+                    {pesticideRecommendation}
+                  </p>
+                </div>
               )}
 
               <button onClick={reset} className="text-sm text-brand-600 font-bold hover:underline">

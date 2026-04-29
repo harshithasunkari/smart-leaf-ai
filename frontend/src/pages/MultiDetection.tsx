@@ -6,7 +6,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/src/components/ui/Button';
 import { Input, Select } from '@/src/components/ui/Input';
-import { predictMulti, saveInteraction, apiErrorMessage, type MultiPredictApi } from '@/src/services/api';
+import { predictMulti, saveHistory, apiErrorMessage, type MultiPredictApi } from '@/src/services/api';
 import { authStore } from '@/src/store/auth';
 import { cn } from '@/src/utils/helpers';
 
@@ -96,23 +96,16 @@ export default function MultiDetection() {
 
       const data = await predictMulti(fd) as MultiPredictFull;
       setResult(data);
-      const saveBatchHistory = async (data: MultiPredictFull) => {
-        const user = authStore.getUser();
-        if (!user) return;
 
-        await fetch(`${import.meta.env.VITE_API_URL}/history/save`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${user.token}`,
-          },
-          body: JSON.stringify({
-            case_type: "multi_detection",
-            title: data.dominant_disease,
-            payload_json: data,
-          }),
+      const user = authStore.getUser();
+      if (user) {
+        await saveHistory({
+          case_type: 'multi_detection',
+          title: `${form.cropName}: ${data.dominant_disease}`,
+          payload_json: data,
         });
-      };
+      }
+
       setStep(3);
     } catch (err) {
       setError(apiErrorMessage(err));

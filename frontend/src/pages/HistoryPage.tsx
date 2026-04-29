@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Search, Calendar, ChevronRight, MoreHorizontal, Download, RefreshCw } from 'lucide-react';
-import { listInteractions, apiErrorMessage, type InteractionRecord } from '@/src/services/api';
+import { listHistory, apiErrorMessage, type HistoryItem } from '@/src/services/api';
 import { authStore } from '@/src/store/auth';
 import { cn, formatDate, severityColor } from '@/src/utils/helpers';
 import Spinner from '@/src/components/Spinner';
 
 export default function HistoryPage() {
-  const [records, setRecords] = React.useState<InteractionRecord[]>([]);
+  const [records, setRecords] = React.useState<HistoryItem[]>([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState('');
   const [search, setSearch] = React.useState('');
@@ -22,8 +22,8 @@ export default function HistoryPage() {
       return;
     }
     try {
-      const data = await listInteractions(user.id);
-      setRecords(data.records);
+      const response = await listHistory();
+      setRecords(response.data.items);
     } catch (err) {
       setError(apiErrorMessage(err));
     } finally {
@@ -37,7 +37,7 @@ export default function HistoryPage() {
     if (!search.trim()) return true;
     const q = search.toLowerCase();
     return (
-      r.disease?.toLowerCase().includes(q) ||
+      r.title?.toLowerCase().includes(q) ||
       r.created_at.includes(q)
     );
   });
@@ -131,10 +131,6 @@ export default function HistoryPage() {
               </thead>
               <tbody className="divide-y divide-emerald-50/60">
                 {filtered.map((record, idx) => {
-                  const rec = record.recommendation as any;
-                  const pesticide = rec?.pesticide || rec?.result?.pesticide || '—';
-                  const disease = record.disease || rec?.disease || '—';
-
                   return (
                     <motion.tr
                       key={record.id}
@@ -147,17 +143,15 @@ export default function HistoryPage() {
                         {record.id}
                       </td>
                       <td className="px-6 py-4">
-                        <p className="text-sm font-bold text-slate-800">{disease}</p>
-                        {record.image_path && (
-                          <p className="text-xs text-slate-400 mt-0.5">Has image</p>
-                        )}
+                        <p className="text-sm font-bold text-slate-800">{record.title}</p>
+                        <p className="text-xs text-slate-400 mt-0.5 capitalize">{record.case_type}</p>
                       </td>
                       <td className="px-6 py-4 text-sm text-slate-500 font-medium">
                         {formatDate(record.created_at)}
                       </td>
                       <td className="px-6 py-4">
                         <p className="text-sm text-slate-600 font-medium max-w-[200px] truncate">
-                          {pesticide}
+                          —
                         </p>
                       </td>
                       <td className="px-6 py-4 text-right">

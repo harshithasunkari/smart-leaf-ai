@@ -170,22 +170,46 @@ export async function recommendPesticide(body: {
 }
 
 // ─── History ─────────────────────────────────────────────────
-export async function saveInteraction(body: {
-  user_id: number;
-  image_path?: string | null;
-  disease?: string | null;
-  recommendation: Record<string, unknown>;
+export interface HistoryItem {
+  id: number;
+  case_type: string;
+  title: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export async function saveHistory(body: {
+  case_type: string;
+  title: string;
+  payload_json: Record<string, unknown>;
 }) {
-  const { data } = await rootClient.post<{ ok: boolean; id: number }>('/history', body);
+  const { data } = await apiClient.post<{
+    success: boolean;
+    data: { history_id: number };
+  }>('/history/save', body);
   return data;
 }
 
-export async function listInteractions(userId: number) {
-  const { data } = await rootClient.get<{
-    user_id: number;
-    count: number;
-    records: InteractionRecord[];
-  }>('/history', { params: { user_id: userId } });
+export async function listHistory() {
+  const { data } = await apiClient.get<{
+    success: boolean;
+    data: { items: HistoryItem[] };
+  }>('/history');
+  return data;
+}
+
+export async function getHistoryDetail(caseId: number) {
+  const { data } = await apiClient.get<{
+    success: boolean;
+    data: {
+      id: number;
+      case_type: string;
+      title: string;
+      payload: Record<string, unknown>;
+      created_at: string;
+      updated_at: string;
+    };
+  }>(`/history/${caseId}`);
   return data;
 }
 

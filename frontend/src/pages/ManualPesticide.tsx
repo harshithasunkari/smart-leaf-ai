@@ -6,25 +6,31 @@ import { Input, Select } from '@/src/components/ui/Input';
 import { recommendPesticide, apiErrorMessage, type RecommendationApi } from '@/src/services/api';
 import { cn } from '@/src/utils/helpers';
 
+const DISEASE_VALUES = [
+  'Bean_Blight',
+  'Bean_Fresh Leaf',
+  'Bean_Mosaic Virus',
+  'Bean_Rust',
+  'Cowpea___Bacterial_wilt',
+  'Cowpea___Fresh_Leaf',
+  'Cowpea___Mosaic_virus',
+  'Cowpea___Septoria_leaf_spot',
+  'Pea_DOWNY_MILDEW_LEAF',
+  'Pea___FRESH_LEAF',
+  'Pea___LEAFMINNER_LEAF',
+  'Pea___POWDER_MILDEW_LEAF',
+  'Soyabean_Bacterial_Pustule',
+  'Soyabean_Frogeye_Leaf_Spot',
+  'Soyabean_Healthy',
+  'Soyabean_Rust',
+  'Soyabean_Sudden_Death_Syndrome',
+  'Soyabean_Target_Leaf_Spot',
+  'Soyabean_Yellow_Mossaic',
+];
+
 const DISEASE_OPTIONS = [
   { label: 'Select Disease', value: '' },
-  { label: 'Healthy', value: 'Healthy' },
-  { label: 'Powdery Mildew', value: 'Powdery_Mildew' },
-  { label: 'Rust', value: 'Rust' },
-  { label: 'Anthracnose', value: 'Anthracnose' },
-  { label: 'Bacterial Blight', value: 'Bacterial_Blight' },
-  { label: 'Leaf Spot', value: 'Leaf_Spot' },
-  { label: 'Mosaic Virus', value: 'Mosaic_Virus' },
-  { label: 'Bean Blight', value: 'Bean___Blight' },
-  { label: 'Bean Mosaic Virus', value: 'Bean___Mosaic_Virus' },
-  { label: 'Bean Rust', value: 'Bean___Rust' },
-  { label: 'Cowpea Bacterial Wilt', value: 'Cowpea___Bacterial_wilt' },
-  { label: 'Cowpea Mosaic Virus', value: 'Cowpea___Mosaic_virus' },
-  { label: 'Pea Downy Mildew', value: 'Pea___DOWNY_MILDEW_LEAF' },
-  { label: 'Pea Powdery Mildew', value: 'Pea___POWDER_MILDEW_LEAF' },
-  { label: 'Soyabean Rust', value: 'Soyabean___Rust' },
-  { label: 'Soyabean Frogeye Leaf Spot', value: 'Soyabean___Frogeye_Leaf_Spot' },
-  { label: 'Other / Unknown', value: 'Diseased' },
+  ...DISEASE_VALUES.map((disease) => ({ label: disease, value: disease })),
 ];
 
 const SOIL_OPTIONS = [

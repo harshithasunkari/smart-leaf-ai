@@ -5,7 +5,7 @@
 Smart Leaf Treatment Advisor is an AI-powered agricultural application that helps farmers diagnose crop diseases and receive precise treatment recommendations. The system uses deep learning (CNN ensemble: MobileNet + ResNet50) to analyze leaf images and calculate exact dosages of pesticides based on disease severity and land area.
 
 **Key Features:**
-- ✅ AI-powered disease detection (79.74% accuracy)
+- ✅ AI-powered disease detection (89.74% accuracy)
 - ✅ Severity assessment using image processing
 - ✅ Automated dosage calculation
 - ✅ Multi-language support (English, Hindi, Telugu)
