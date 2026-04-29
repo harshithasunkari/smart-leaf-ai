@@ -1,0 +1,98 @@
+{
+  "app": {
+    "title": "స్మార్ట్ లీఫ్ ట్రీట్‌మెంట్ సలహాదారు",
+    "description": "AI-ఆధారిత పంట రోగ గుర్తింపు మరియు చికిత్స సిఫారసు వ్యవస్థ",
+    "version": "1.0.0"
+  },
+  "navigation": {
+    "home": "హోమ్",
+    "diagnose": "రోగనిర్ధారణ",
+    "dashboard": "డ్యాష్‌బోర్డ్",
+    "history": "చరిత్ర",
+    "logout": "లాగ్ఔట్",
+    "language": "భాష"
+  },
+  "auth": {
+    "username": "వినియోగదారు పేరు",
+    "password": "పాస్‌వర్డ్",
+    "login": "ప్రవేశించండి",
+    "logout": "లాగ్ఔట్",
+    "demoCredentials": "డెమో ఆధారాలు: ఏదైనా వినియోగదారు పేరు/పాస్‌వర్డ్ కలయికను ఉపయోగించండి"
+  },
+  "forms": {
+    "selectCrop": "పంట ఎంచుకోండి",
+    "selectSoil": "నేల ఎంచుకోండి",
+    "landSize": "భూమి పరిమాణం (ఎకరాలు)",
+    "selectStage": "వృద్ధి దశ ఎంచుకోండి",
+    "uploadImages": "ఆకు చిత్రాలను అపుకోడ్ చేయండి",
+    "submit": "విశ్లేషణ కోసం సమర్పించండి",
+    "cancel": "రద్దు చేయండి",
+    "required": "ఈ ఫీల్డ్ అవసరమైనది",
+    "invalidEmail": "చెల్లని ఈమెయిల్ చిరునామా",
+    "invalidNumber": "దయచేసి చెల్లునటి సంఖ్యను నమోదు చేయండి"
+  },
+  "diagnosis": {
+    "title": "పంట రోగనిర్ధారణ",
+    "disease": "రోగం",
+    "severity": "తీవ్రత",
+    "confidence": "విశ్వాసం",
+    "solution": "పరిష్కారం (లీటర్లు)",
+    "chemical": "రసాయన (గ్రాములు)",
+    "interval": "స్ప్రే విరామం (రోజులు)",
+    "recommendation": "సిఫారసు",
+    "resultsTitle": "రోగనిర్ధారణ ఫలితాలు",
+    "noResults": "రోగనిర్ధారణ ఫలితాలు లేవు",
+    "imagesAnalyzed": "విశ్లేషించిన చిత్రాలు",
+    "cropInfo": "పంట సమాచారం"
+  },
+  "dashboard": {
+    "title": "డ్యాష్‌బోర్డ్",
+    "treatmentPlan": "చికిత్స ప్రణాళిక",
+    "solutionVolume": "ఆలస్యం వాల్యూమ్",
+    "chemicalRequired": "అవసరమైన రసాయన",
+    "sprayInterval": "స్ప్రే విరామం",
+    "totalLandArea": "మొత్తం భూమి ప్రాంతం",
+    "printReport": "నివేదికను ముద్రించండి",
+    "downloadReport": "నివేదికను డౌన్‌లోడ్ చేయండి"
+  },
+  "history": {
+    "title": "గత రోగనిర్ధారణలు",
+    "date": "తేదీ",
+    "crop": "పంట",
+    "disease": "రోగం",
+    "dosage": "మోతాదు",
+    "status": "స్థితి",
+    "totalDiagnoses": "మొత్తం రోగనిర్ధారణలు",
+    "averageSeverity": "సగటు తీవ్రత",
+    "treated": "చికిత్స"
+  },
+  "messages": {
+    "success": "విజయం",
+    "error": "లోపం",
+    "loading": "లోడ్ అవుతోంది...",
+    "noData": "డేటా లేదు",
+    "connectionError": "సংযోగ లోపం",
+    "backendError": "బ్యాక్‌ఎండ్ API కు కనెక్ట్ చేయలేకపోయాము",
+    "ensureBackendRunning": "బ్యాక్‌ఎండ్ సర్వర్ నడుస్తున్నట్లు నిర్ధారించుకోండి",
+    "retry": "తిరిగి ప్రయత్నించండి"
+  },
+  "validation": {
+    "cropRequired": "దయచేసి పంట ఎంచుకోండి",
+    "soilRequired": "దయచేసి నేల వర్గం ఎంచుకోండి",
+    "landSizeRequired": "దయచేసి చెల్లునటి భూమి పరిమాణాన్ని నమోదు చేయండి",
+    "stageRequired": "దయచేసి పంట దశ ఎంచుకోండి",
+    "imagesRequired": "దయచేసి కనీసం ఒక చిత్రాన్ని అపుకోడ్ చేయండి",
+    "invalidFileType": "చెల్లని ఫైల్ రకం",
+    "fileTooLarge": "ఫైల్ చాలా పెద్దది"
+  },
+  "features": {
+    "aiDetection": "AI-ఆధారిత రోగ గుర్తింపు",
+    "severityAssessment": "తీవ్రత మూల్యాంకనం",
+    "treatmentRecommendations": "చికిత్స సిఫారసులు",
+    "dosageCalculations": "మోతాదు లెక్కలు"
+  },
+  "footer": {
+    "allRightsReserved": "సర్వాధికారాలు సంరక్షితాలు",
+    "copyright": "© 2026 స్మార్ట్ లీఫ్ ట్రీట్‌మెంట్ సలహాదారు"
+  }
+}

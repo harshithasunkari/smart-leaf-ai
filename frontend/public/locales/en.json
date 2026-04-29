@@ -1,0 +1,98 @@
+{
+  "app": {
+    "title": "Smart Leaf Treatment Advisor",
+    "description": "AI-powered crop disease detection and treatment recommendation system",
+    "version": "1.0.0"
+  },
+  "navigation": {
+    "home": "Home",
+    "diagnose": "Diagnose",
+    "dashboard": "Dashboard",
+    "history": "History",
+    "logout": "Logout",
+    "language": "Language"
+  },
+  "auth": {
+    "username": "Username",
+    "password": "Password",
+    "login": "Login",
+    "logout": "Logout",
+    "demoCredentials": "Demo Credentials: Use any username/password combination"
+  },
+  "forms": {
+    "selectCrop": "Select Crop",
+    "selectSoil": "Select Soil",
+    "landSize": "Land Size (acres)",
+    "selectStage": "Select Growth Stage",
+    "uploadImages": "Upload Leaf Images",
+    "submit": "Submit for Analysis",
+    "cancel": "Cancel",
+    "required": "This field is required",
+    "invalidEmail": "Invalid email address",
+    "invalidNumber": "Please enter a valid number"
+  },
+  "diagnosis": {
+    "title": "Crop Diagnosis",
+    "disease": "Disease",
+    "severity": "Severity",
+    "confidence": "Confidence",
+    "solution": "Solution (liters)",
+    "chemical": "Chemical (grams)",
+    "interval": "Spray Interval (days)",
+    "recommendation": "Recommendation",
+    "resultsTitle": "Diagnosis Results",
+    "noResults": "No diagnosis results available",
+    "imagesAnalyzed": "Images analyzed",
+    "cropInfo": "Crop Information"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "treatmentPlan": "Treatment Plan",
+    "solutionVolume": "Solution Volume",
+    "chemicalRequired": "Chemical Required",
+    "sprayInterval": "Spray Interval",
+    "totalLandArea": "Total Land Area",
+    "printReport": "Print Report",
+    "downloadReport": "Download Report"
+  },
+  "history": {
+    "title": "Past Diagnoses",
+    "date": "Date",
+    "crop": "Crop",
+    "disease": "Disease",
+    "dosage": "Dosage",
+    "status": "Status",
+    "totalDiagnoses": "Total Diagnoses",
+    "averageSeverity": "Avg Severity",
+    "treated": "Treated"
+  },
+  "messages": {
+    "success": "Success",
+    "error": "Error",
+    "loading": "Loading...",
+    "noData": "No data available",
+    "connectionError": "Connection Error",
+    "backendError": "Unable to connect to the backend API",
+    "ensureBackendRunning": "Please ensure the backend server is running",
+    "retry": "Retry"
+  },
+  "validation": {
+    "cropRequired": "Please select a crop",
+    "soilRequired": "Please select soil type",
+    "landSizeRequired": "Please enter a valid land size",
+    "stageRequired": "Please select crop stage",
+    "imagesRequired": "Please upload at least one image",
+    "invalidFileType": "Invalid file type",
+    "fileTooLarge": "File is too large"
+  },
+  "features": {
+    "aiDetection": "AI-powered disease detection",
+    "severityAssessment": "Severity assessment",
+    "treatmentRecommendations": "Treatment recommendations",
+    "dosageCalculations": "Dosage calculations"
+  },
+  "footer": {
+    "allRightsReserved": "All rights reserved",
+    "copyright": "© 2026 Smart Leaf Treatment Advisor"
+  }
+}

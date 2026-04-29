@@ -1,0 +1,83 @@
+{
+  "default": {
+    "pesticide_name": "Copper Oxychloride 50% WP",
+    "dosage_per_hectare_g": 2500,
+    "spray_interval_days": 10,
+    "precautions": "Wear protective gear; spray in calm wind; avoid drift to water bodies; observe pre-harvest interval on label.",
+    "if_fails": "Re-verify diagnosis with a fresh sample; rotate chemistry; check spray coverage and water pH; consult an agronomist if symptoms spread after two cycles."
+  },
+  "by_disease": {
+    "Healthy": {
+      "pesticide_name": "None (monitoring only)",
+      "dosage_per_hectare_g": 0,
+      "spray_interval_days": 0,
+      "precautions": "No chemical application needed. Scout weekly and maintain nutrition and irrigation.",
+      "if_fails": "N/A — if leaves worsen, run detection again or submit multiple angles."
+    },
+    "Powdery_Mildew": {
+      "pesticide_name": "Sulfur 80% WP (or compatible systemic per label)",
+      "dosage_per_hectare_g": 3000,
+      "spray_interval_days": 7,
+      "precautions": "Do not mix with oils; test on a small area in heat; bee-safe timing.",
+      "if_fails": "Improve airflow; alternate FRAC groups; ensure upper and lower leaf coverage; re-run model on new lesions."
+    },
+    "Rust": {
+      "pesticide_name": "Propiconazole-based fungicide (per label)",
+      "dosage_per_hectare_g": 500,
+      "spray_interval_days": 14,
+      "precautions": "Rotate modes of action; avoid spray under drought stress without advisory.",
+      "if_fails": "Remove heavily infected leaves if permitted; check for alternate host plants nearby; escalate to extension lab testing."
+    },
+    "Anthracnose": {
+      "pesticide_name": "Chlorothalonil 75% WP",
+      "dosage_per_hectare_g": 2000,
+      "spray_interval_days": 7,
+      "precautions": "Protect eyes/skin; do not enter treated area until dry.",
+      "if_fails": "Sanitize tools; avoid overhead irrigation; verify strain with lab if lesions persist."
+    },
+    "Bacterial_Blight": {
+      "pesticide_name": "Copper hydroxide 53.8% DF",
+      "dosage_per_hectare_g": 2500,
+      "spray_interval_days": 5,
+      "precautions": "Bactericides are protective; copper may phytotox young foliage at high temps.",
+      "if_fails": "Switch to resistant cultivars where available; reduce leaf wetness hours; bacterial issues need early rounds—consider antibiotic where legally allowed."
+    },
+    "Leaf_Spot": {
+      "pesticide_name": "Azoxystrobin + Difenoconazole (premix per label)",
+      "dosage_per_hectare_g": 800,
+      "spray_interval_days": 10,
+      "precautions": "Respect resistance management; limit sprays per season per label.",
+      "if_fails": "Increase scouting frequency; remove crop debris; validate disease ID—some spots are nutrient, not fungal."
+    },
+    "Mosaic_Virus": {
+      "pesticide_name": "No curative pesticide (vector and hygiene management)",
+      "dosage_per_hectare_g": 0,
+      "spray_interval_days": 0,
+      "precautions": "Control aphids/whiteflies; disinfect tools; uproot highly symptomatic plants to slow spread.",
+      "if_fails": "Confirm virus with testing; manage vectors with IPM; replace seed stock next season."
+    },
+    "Diseased": {
+      "pesticide_name": "Broad-spectrum protectant fungicide (per local label)",
+      "dosage_per_hectare_g": 2000,
+      "spray_interval_days": 10,
+      "precautions": "Always read label for crop and stage; calibrate sprayer.",
+      "if_fails": "Capture clearer images for the model; combine with field scouting; seek local extension advice."
+    }
+  },
+  "soil_factor": {
+    "Sandy": 1.05,
+    "Loamy": 1.0,
+    "Clay": 0.95,
+    "Silty": 1.0,
+    "Peaty": 1.02,
+    "Black": 1.0,
+    "Red": 1.0
+  },
+  "stage_factor": {
+    "Seedling": 0.85,
+    "Vegetative": 1.0,
+    "Flowering": 1.05,
+    "Pod_Filling": 1.0,
+    "Maturity": 0.9
+  }
+}

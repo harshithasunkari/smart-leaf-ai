@@ -1,0 +1,16 @@
+# Virtual environments
+legume_env/
+plant_env_new/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Model files (optional - keep if small)
+*.h5
+*.pkl
+
+# OS files
+.DS_Store

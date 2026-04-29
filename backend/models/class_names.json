@@ -1,0 +1,21 @@
+{
+  "0": "Bean_Blight",
+  "1": "Bean_Fresh Leaf",
+  "2": "Bean_Mosaic Virus",
+  "3": "Bean_Rust",
+  "4": "Cowpea___Bacterial_wilt",
+  "5": "Cowpea___Fresh_Leaf",
+  "6": "Cowpea___Mosaic_virus",
+  "7": "Cowpea___Septoria_leaf_spot",
+  "8": "Pea_DOWNY_MILDEW_LEAF",
+  "9": "Pea___FRESH_LEAF",
+  "10": "Pea___LEAFMINNER_LEAF",
+  "11": "Pea___POWDER_MILDEW_LEAF",
+  "12": "Soyabean_Bacterial_Pustule",
+  "13": "Soyabean_Frogeye_Leaf_Spot",
+  "14": "Soyabean_Healthy",
+  "15": "Soyabean_Rust",
+  "16": "Soyabean_Sudden_Death_Syndrome",
+  "17": "Soyabean_Target_Leaf_Spot",
+  "18": "Soyabean_Yellow_Mossaic"
+}
