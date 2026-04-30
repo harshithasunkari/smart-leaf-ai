@@ -209,13 +209,31 @@ export default function SingleDetection() {
 
               {/* DISEASE CARD */}
               <div className="bg-white p-6 rounded-3xl border shadow-sm">
+
+                {/* DISEASE NAME */}
                 <h2 className="text-2xl font-black text-slate-800">
                   {result.disease ?? result.dominant_disease}
                 </h2>
+
+                {/* CROP INFO (MOVE UP for better flow) */}
                 <p className="text-sm text-slate-500 mt-1">
                   Crop: {result.crop_name} | Stage: {result.crop_stage}
                 </p>
-                <div className="mt-3 flex gap-2 flex-wrap">
+
+                {/* PESTICIDE (ACTION SECTION) */}
+                {pesticideRecommendation && (
+                  <div className="bg-emerald-50 border border-emerald-100 rounded-3xl p-5 mt-4">
+                    <p className="text-xs font-black uppercase tracking-[0.25em] text-emerald-600 mb-2">
+                      Recommended Pesticide
+                    </p>
+                    <p className="text-xl font-bold text-emerald-900">
+                      {pesticideRecommendation}
+                    </p>
+                  </div>
+                )}
+
+                {/* SEVERITY + CONFIDENCE */}
+                <div className="mt-4 flex gap-2 flex-wrap">
                   <span className="px-3 py-1 text-xs font-bold rounded-full bg-slate-100 text-slate-600">
                     {result.severity}
                   </span>
@@ -224,32 +242,26 @@ export default function SingleDetection() {
                   </span>
                 </div>
 
+                {/* WARNING */}
                 {result.low_confidence_warning && result.low_confidence_message && (
                   <p className="text-xs text-amber-600 mt-3 bg-amber-50 p-3 rounded-xl">
                     ⚠ {result.low_confidence_message}
                   </p>
                 )}
+
               </div>
 
               {/* DISCLAIMER */}
               {result.consult_expert_disclaimer && (
-                <p className="text-xs text-slate-400 leading-relaxed px-1">
+                <p className="text-xs text-slate-400 leading-relaxed px-1 mt-3">
                   ⚠️ {result.consult_expert_disclaimer}
                 </p>
               )}
 
-              {pesticideRecommendation && (
-                <div className="bg-emerald-50 border border-emerald-100 rounded-3xl p-5">
-                  <p className="text-xs font-black uppercase tracking-[0.25em] text-emerald-600 mb-2">
-                    Recommended Pesticide
-                  </p>
-                  <p className="text-xl font-bold text-emerald-900">
-                    {pesticideRecommendation}
-                  </p>
-                </div>
-              )}
-
-              <button onClick={reset} className="text-sm text-brand-600 font-bold hover:underline">
+              <button
+                onClick={reset}
+                className="text-sm text-brand-600 font-bold hover:underline mt-4"
+              >
                 New Scan
               </button>
             </div>

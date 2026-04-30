@@ -168,7 +168,7 @@ class MLService:
     def predict_many(self, paths: list[str]) -> dict:
         results = self.predict_paths(paths)
 
-        diseases = [r["disease"] for r in results]
+        diseases = [r["raw_class"] for r in results]
         dominant = Counter(diseases).most_common(1)[0][0]
 
         confs = [r["confidence"] for r in results if r["disease"] == dominant]
@@ -177,7 +177,8 @@ class MLService:
         )
 
         return {
-            "dominant_disease": dominant,
+            "dominant_disease": dominant.replace("___", " - ").replace("_", " "),
+            "dominant_raw_class": dominant,   # ✅ ADD THIS LINE
             "confidence": avg_conf,
             "confidence_percent": round(avg_conf * 100.0, 2),
             "severity": self.severity_band(avg_conf),

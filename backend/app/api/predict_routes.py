@@ -51,7 +51,7 @@ async def predict_single(
     sev = ml_service.severity_band(pred["confidence_percent"])
     # 👉 ADD THIS BEFORE out =
     rec = pesticide_service.recommend(
-        disease=pred["disease"],
+        disease=pred["raw_class"],
         crop_type=crop_name.strip(),
         soil_type="normal",  # you can change later
         land_area_hectares=1.0,  # default
@@ -125,7 +125,7 @@ async def predict_multi(
     data["crop_name"] = crop_name.strip()
     data["crop_stage"] = crop_stage.strip()
     rec = pesticide_service.recommend(
-        disease=agg["dominant_disease"],
+        disease=agg["dominant_raw_class"],
         crop_type=crop_name.strip(),
         soil_type="normal",
         land_area_hectares=1.0,

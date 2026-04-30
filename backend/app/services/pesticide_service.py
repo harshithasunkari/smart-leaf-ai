@@ -32,7 +32,13 @@ class PesticideService:
         data = self._load()
         by = data.get("by_disease", {})
         dkey = normalize_key(disease)
-        block = by.get(disease.strip()) or by.get(dkey) or data["default"]
+        block = None
+        for key in by.keys():
+            if normalize_key(key) == normalize_key(disease):
+                block = by[key]
+                break
+        if not block:
+            block = data["default"]
         soil_fac = float(data.get("soil_factor", {}).get(soil_type, 1.0))
         stage_fac = float(data.get("stage_factor", {}).get(normalize_key(crop_stage), 1.0))
         base_g = float(block["dosage_per_hectare_g"])

@@ -121,12 +121,6 @@ export default function HistoryPage() {
                   <th className="px-6 py-4 text-[11px] font-black uppercase tracking-[0.18em] text-emerald-800/60">
                     Date
                   </th>
-                  <th className="px-6 py-4 text-[11px] font-black uppercase tracking-[0.18em] text-emerald-800/60">
-                    Recommendation
-                  </th>
-                  <th className="px-6 py-4 text-right text-[11px] font-black uppercase tracking-[0.18em] text-emerald-800/60">
-                    Action
-                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-emerald-50/60">
@@ -148,19 +142,6 @@ export default function HistoryPage() {
                       </td>
                       <td className="px-6 py-4 text-sm text-slate-500 font-medium">
                         {formatDate(record.created_at)}
-                      </td>
-                      <td className="px-6 py-4">
-                        <p className="text-sm text-slate-600 font-medium max-w-[200px] truncate">
-                          —
-                        </p>
-                      </td>
-                      <td className="px-6 py-4 text-right">
-                        <button className="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-all">
-                          <MoreHorizontal size={18} />
-                        </button>
-                        <button className="p-2 text-slate-300 hover:text-slate-500 transition-all">
-                          <ChevronRight size={18} />
-                        </button>
                       </td>
                     </motion.tr>
                   );
