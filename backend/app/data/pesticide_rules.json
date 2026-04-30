@@ -1,6 +1,6 @@
 {
   "by_disease": {
-    "Bean_Blight": {
+    "bean_blight": {
       "pesticide_name": "Copper Hydroxide / Copper Oxychloride / Streptomycin + Copper",
       "options": ["Copper Hydroxide", "Copper Oxychloride", "Streptomycin + Copper"],
       "dosage_per_hectare_g": 2500,
@@ -8,7 +8,7 @@
       "precautions": "Bactericides are protective; copper may phytotox young foliage at high temps. Wear protective gear; spray in calm wind; avoid drift to water bodies.",
       "if_fails": "Switch to resistant cultivars; reduce leaf wetness hours; consider antibiotic where legally allowed; consult agronomist if symptoms spread after two cycles."
     },
-    "Bean_Fresh Leaf": {
+    "bean_fresh_leaf": {
       "pesticide_name": "None (monitoring only)",
       "options": [],
       "dosage_per_hectare_g": 0,
@@ -16,7 +16,7 @@
       "precautions": "No chemical application needed. Scout weekly and maintain nutrition and irrigation.",
       "if_fails": "N/A — if leaves worsen, run detection again or submit multiple angles."
     },
-    "Bean_Mosaic Virus": {
+    "bean_mosaic_virus": {
       "pesticide_name": "No curative pesticide — vector management: Imidacloprid / Acetamiprid / Neem Oil",
       "options": ["Imidacloprid", "Acetamiprid", "Neem Oil"],
       "dosage_per_hectare_g": 0,
@@ -24,7 +24,7 @@
       "precautions": "Control aphids/whiteflies with listed options; disinfect tools; uproot highly symptomatic plants to slow spread.",
       "if_fails": "Confirm virus with testing; manage vectors with IPM; replace seed stock next season."
     },
-    "Bean_Rust": {
+    "bean_rust": {
       "pesticide_name": "Triadimefon / Propiconazole / Azoxystrobin / Sulphur WP",
       "options": ["Triadimefon", "Propiconazole", "Azoxystrobin", "Sulphur WP"],
       "dosage_per_hectare_g": 500,
@@ -33,7 +33,7 @@
       "if_fails": "Remove heavily infected leaves if permitted; check for alternate host plants nearby; escalate to extension lab testing."
     },
 
-    "Cowpea___Bacterial_wilt": {
+    "cowpea_bacterial_wilt": {
       "pesticide_name": "Copper Hydroxide / Copper Oxychloride",
       "options": ["Copper Hydroxide", "Copper Oxychloride"],
       "dosage_per_hectare_g": 2500,
@@ -41,7 +41,7 @@
       "precautions": "Copper bactericides are protective; avoid high-temperature spray; wear protective gear.",
       "if_fails": "Use resistant varieties; practice crop rotation; reduce soil moisture; consult agronomist if disease spreads."
     },
-    "Cowpea___Fresh_Leaf": {
+    "cowpea_fresh_leaf": {
       "pesticide_name": "None (monitoring only)",
       "options": [],
       "dosage_per_hectare_g": 0,
@@ -49,7 +49,7 @@
       "precautions": "No chemical application needed. Scout weekly and maintain nutrition and irrigation.",
       "if_fails": "N/A — if leaves worsen, run detection again or submit multiple angles."
     },
-    "Cowpea___Mosaic_virus": {
+    "cowpea_mosaic_virus": {
       "pesticide_name": "No curative pesticide — vector management: Imidacloprid / Acetamiprid / Neem Oil",
       "options": ["Imidacloprid", "Acetamiprid", "Neem Oil"],
       "dosage_per_hectare_g": 0,
@@ -57,7 +57,7 @@
       "precautions": "Control aphids/whiteflies; disinfect tools; uproot highly symptomatic plants to slow spread.",
       "if_fails": "Confirm virus with testing; manage vectors with IPM; replace seed stock next season."
     },
-    "Cowpea___Septoria_leaf_spot": {
+    "cowpea_septoria_leaf_spot": {
       "pesticide_name": "Chlorothalonil / Boscalid + Pyraclostrobin",
       "options": ["Chlorothalonil", "Boscalid + Pyraclostrobin"],
       "dosage_per_hectare_g": 2000,
@@ -66,7 +66,7 @@
       "if_fails": "Sanitize tools; avoid overhead irrigation; verify strain with lab if lesions persist."
     },
 
-    "Pea_DOWNY_MILDEW_LEAF": {
+    "pea_downy_mildew_leaf": {
       "pesticide_name": "Metalaxyl-M / Fosetyl-Al / Dimethomorph / Mancozeb",
       "options": ["Metalaxyl-M", "Fosetyl-Al", "Dimethomorph", "Mancozeb"],
       "dosage_per_hectare_g": 2500,
@@ -74,7 +74,7 @@
       "precautions": "Apply preventively; avoid spray in hot dry conditions; wear protective gear.",
       "if_fails": "Improve airflow; avoid overhead irrigation; alternate FRAC groups; re-run model on new lesions."
     },
-    "Pea___FRESH_LEAF": {
+    "pea_fresh_leaf": {
       "pesticide_name": "None (monitoring only)",
       "options": [],
       "dosage_per_hectare_g": 0,
@@ -82,7 +82,7 @@
       "precautions": "No chemical application needed. Scout weekly and maintain nutrition and irrigation.",
       "if_fails": "N/A — if leaves worsen, run detection again or submit multiple angles."
     },
-    "Pea___LEAFMINNER_LEAF": {
+    "pea_leafminner_leaf": {
       "pesticide_name": "Abamectin / Spinosad / Cyromazine / Azadirachtin",
       "options": ["Abamectin", "Spinosad", "Cyromazine", "Azadirachtin"],
       "dosage_per_hectare_g": 600,
@@ -90,7 +90,7 @@
       "precautions": "Apply at early larval stage; bee-safe timing; rotate insecticide groups.",
       "if_fails": "Use yellow sticky traps to monitor adult populations; apply soil drenches for pupal stages; consult extension."
     },
-    "Pea___POWDER_MILDEW_LEAF": {
+    "pea_powder_mildew_leaf": {
       "pesticide_name": "Sulphur WP/WDG / Tebuconazole / Myclobutanil / Potassium Bicarbonate",
       "options": ["Sulphur WP/WDG", "Tebuconazole", "Myclobutanil", "Potassium Bicarbonate"],
       "dosage_per_hectare_g": 3000,
@@ -99,7 +99,7 @@
       "if_fails": "Improve airflow; alternate FRAC groups; ensure upper and lower leaf coverage; re-run model on new lesions."
     },
 
-    "Soyabean_Bacterial_Pustule": {
+    "soyabean_bacterial_pustule": {
       "pesticide_name": "Copper Oxychloride / Kasugamycin",
       "options": ["Copper Oxychloride", "Kasugamycin"],
       "dosage_per_hectare_g": 2500,
@@ -107,7 +107,7 @@
       "precautions": "Bactericides are protective; apply before infection spreads; copper may phytotox in heat.",
       "if_fails": "Use resistant cultivars; reduce leaf wetness hours; consult extension for antibiotic options."
     },
-    "Soyabean_Frogeye_Leaf_Spot": {
+    "soyabean_frogeye_leaf_spot": {
       "pesticide_name": "Thiophanate-methyl / Fluxapyroxad + Pyraclostrobin",
       "options": ["Thiophanate-methyl", "Fluxapyroxad + Pyraclostrobin"],
       "dosage_per_hectare_g": 800,
@@ -115,7 +115,7 @@
       "precautions": "Respect resistance management; limit sprays per season per label.",
       "if_fails": "Increase scouting frequency; remove crop debris; validate disease ID — some spots are nutrient, not fungal."
     },
-    "Soyabean_Healthy": {
+    "soyabean_healthy": {
       "pesticide_name": "None (monitoring only)",
       "options": [],
       "dosage_per_hectare_g": 0,
@@ -123,7 +123,7 @@
       "precautions": "No chemical application needed. Scout weekly and maintain nutrition and irrigation.",
       "if_fails": "N/A — if leaves worsen, run detection again or submit multiple angles."
     },
-    "Soyabean_Rust": {
+    "soyabean_rust": {
       "pesticide_name": "Pyraclostrobin / Epoxiconazole / Flutriafol",
       "options": ["Pyraclostrobin", "Epoxiconazole", "Flutriafol"],
       "dosage_per_hectare_g": 500,
@@ -131,7 +131,7 @@
       "precautions": "Rotate modes of action; avoid spray under drought stress; apply at early pustule stage.",
       "if_fails": "Remove heavily infected leaves; check for alternate host plants nearby; escalate to extension lab testing."
     },
-    "Soyabean_Sudden_Death_Syndrome": {
+    "soyabean_sudden_death_syndrome": {
       "pesticide_name": "Fluopyram / Metalaxyl-M / Bacillus subtilis",
       "options": ["Fluopyram", "Metalaxyl-M", "Bacillus subtilis"],
       "dosage_per_hectare_g": 600,
@@ -139,7 +139,7 @@
       "precautions": "Apply as seed treatment or in-furrow; manage soil drainage; avoid compaction.",
       "if_fails": "Improve drainage; rotate with non-host crops; consult agronomist for soil amendment."
     },
-    "Soyabean_Target_Leaf_Spot": {
+    "soyabean_target_leaf_spot": {
       "pesticide_name": "Pyraclostrobin + Epoxiconazole / Carbendazim / Mancozeb",
       "options": ["Pyraclostrobin + Epoxiconazole", "Carbendazim", "Mancozeb"],
       "dosage_per_hectare_g": 1500,
@@ -147,7 +147,7 @@
       "precautions": "Apply early at first symptom; rotate fungicide groups; calibrate sprayer.",
       "if_fails": "Remove crop debris; improve canopy airflow; verify ID with lab if lesions persist."
     },
-    "Soyabean_Yellow_Mossaic": {
+    "soyabean_yellow_mosaic": {
       "pesticide_name": "No curative pesticide — vector management: Thiamethoxam / Buprofezin / Diafenthiuron / Neem Oil",
       "options": ["Thiamethoxam", "Buprofezin", "Diafenthiuron", "Neem Oil"],
       "dosage_per_hectare_g": 0,
