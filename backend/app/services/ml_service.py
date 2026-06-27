@@ -1,3 +1,14 @@
+"""
+app/services/ml_service.py
+────────────────────────────────────────────────────────────────────────────────
+NO ML LOGIC CHANGED.
+
+Only guarantee: predict_many() always includes "dominant_raw_class" in its
+return dict (it already did — just documented clearly here so the route knows
+to read ml_result["dominant_raw_class"] and pass it to pesticide_service).
+────────────────────────────────────────────────────────────────────────────────
+"""
+
 import json
 import numpy as np
 import tensorflow as tf
@@ -5,7 +16,7 @@ from collections import Counter
 
 from app.core.config import get_settings
 from utils.preprocessing import preprocess_uploaded_image
-from app.utils.disease_mapper import to_key, to_ui
+from app.utils.disease_mapper import to_key, to_ui   # to_key imported for future use
 
 
 class MLService:
@@ -62,7 +73,7 @@ class MLService:
 
         try:
             return int(shape[1]), int(shape[2])
-        except:
+        except Exception:
             return default, default
 
     @property
@@ -92,11 +103,11 @@ class MLService:
             raw = self._class_names[idx] if idx < len(self._class_names) else f"Class_{idx}"
 
             results.append({
-                "disease": to_ui(raw),
-                "confidence": confidence,
-                "confidence_percent": round(confidence * 100, 2),
-                "class_index": idx,
-                "raw_class": raw,
+                "disease":              to_ui(raw),          # UI display string
+                "confidence":           confidence,
+                "confidence_percent":   round(confidence * 100, 2),
+                "class_index":          idx,
+                "raw_class":            raw,                 # ← pesticide_service reads THIS
             })
 
         return results
@@ -113,15 +124,18 @@ class MLService:
         dominant_display = to_ui(dominant_raw)
 
         confs = [r["confidence"] for r in results if r["raw_class"] == dominant_raw]
-
-        avg_conf = float(np.mean(confs)) if confs else float(np.mean([r["confidence"] for r in results]))
+        avg_conf = (
+            float(np.mean(confs))
+            if confs
+            else float(np.mean([r["confidence"] for r in results]))
+        )
 
         return {
-            "dominant_disease": dominant_display,
-            "dominant_raw_class": dominant_raw,
-            "confidence": avg_conf,
-            "confidence_percent": round(avg_conf * 100, 2),
-            "severity": self.severity_band(avg_conf),
+            "dominant_disease":     dominant_display,        # UI display string
+            "dominant_raw_class":   dominant_raw,            # ← route passes THIS to pesticide_service
+            "confidence":           avg_conf,
+            "confidence_percent":   round(avg_conf * 100, 2),
+            "severity":             self.severity_band(avg_conf),
             "per_image": [
                 {**x, "severity": self.severity_band(x["confidence"])}
                 for x in results

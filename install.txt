@@ -1,0 +1,15 @@
+backend :-
+D:
+cd smart-leaf-ai
+legume_env\Scripts\activate
+cd backend 
+pip uninstall bcrypt -y
+pip install bcrypt==3.2.0
+python -m uvicorn main:app --reload
+
+frontend:-
+D:
+cd smart-leaf-ai
+cd frontend
+npm install
+npm run dev
