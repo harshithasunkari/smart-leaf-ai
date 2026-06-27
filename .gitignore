@@ -14,3 +14,10 @@ __pycache__/
 
 # OS files
 .DS_Store
+
+node_modules/
+__pycache__/
+.env
+.env.local
+*.db
+backend/uploads/*
